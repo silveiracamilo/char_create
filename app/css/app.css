@@ -1,0 +1,80 @@
+body span.ajax-loading {
+    display: none;
+    position: absolute;
+    top: 290px;
+    left: 50%;
+    margin-left: -14px;
+    width: 28px;
+    height: 28px;
+    background: url('/app/images/ajax-loader.gif') no-repeat;
+}
+body span.ajax-loading .active{
+  display: block;
+}
+body.loading span.ajax-loading {
+    display: block;
+}
+html>body>div#loader {
+    display: block;
+    position: absolute;
+    width: 259px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    margin-left: -129px;
+    margin-top: -12px;
+    z-index: 99;
+}
+html>body>div#loader span#bar {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: #34488d;
+}
+html>body>div#loader span {
+    background: url('/app/images/logo_silveiracamilo.jpg') no-repeat;
+}
+
+
+pre {
+  margin-left: 25px;
+  text-align: left;
+}
+
+#wrapper {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#pixels {
+  width: 200px;
+  float: left;
+}
+
+
+#code {
+  width: 200px;
+  float: left;
+}
+
+#arduino {
+  padding-top: 30px;
+  clear:both;
+}
+
+
+.pixel {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+}
+
+.off {
+  background: #5EFB6E;
+}
+
+.on {
+  background: #484848;
+}

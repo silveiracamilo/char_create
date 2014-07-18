@@ -1,0 +1,48 @@
+<link href="/front/app/css/jquery.lightbox-0.5.css" rel="stylesheet" type="text/css">
+
+<div id="title_page">
+  <h1 id="titulo">Trabalho</h1>
+</div>
+
+<div id="content">
+  <div id="trabalho_titulo">{{work.title}}</div>
+  <div id="trabalho">
+    <p>data: {{work.date}}</p>
+    <p>tecnologias: {{work.technologies}}</p>
+    <p>produzido para: <a href="{{work.produced_link}}" target="_blank">{{work.produced_in}}</a></p>
+    <p ng-show="work.link">link: <a href="{{work.link}}" target="_blank">{{work.link}}</a></p>
+    <h5 ng-show="work_pictures.length">imagens</h5>
+    
+    <div work-carousel id="myCarousel" class="carousel slide" ng-show="work_pictures.length">
+      <ol class="carousel-indicators">
+        <li ng-repeat="work_picture in work_pictures" data-target="#myCarousel" data-slide-to="{{$i}}" ng-class="{active:(work_picture==work_pictures[0])}"></li><!-- aqui tem -->
+      </ol>
+      
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div ng-repeat="work_picture in work_pictures" ng-class="{active:(work_picture==work_pictures[0])}">
+          <div class='inner-item'>
+            <a href="{{work_picture.picture}}" title="{{work_picture.title}}">
+                <img src="{{work_picture.picture}}"/>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>  
+    
+    <div id="flashcontent" work-flash ng-show="work.swf"></div>
+
+    <a ng-if="work.link" href="{{work.link}}" target="_blank" class="link_box"><div id="acesse">acesse</div></a>
+
+    <div id="fb-root" style="margin-top: 25px; margin-bottom: 50px;"></div>
+    <script src="http://connect.facebook.net/en_US/all.js#appId=241069989264345&amp;xfbml=1"></script>
+    <fb:like href="#/trabalho/{{work.path}}" send="true" width="720" show_faces="true" font=""></fb:like>
+    <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+    <fb:comments href="#/trabalho/{{work.path}}" num_posts="10" width="720"></fb:comments>
+  </div>
+  <a href="#/trabalhos" class="link_box_branco"><div class="voltar">voltar</div></a>
+</div>

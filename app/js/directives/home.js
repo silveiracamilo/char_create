@@ -1,0 +1,3 @@
+CC.directive('homeDirective', function(){
+	
+});
