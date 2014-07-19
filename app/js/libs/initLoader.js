@@ -71,7 +71,7 @@ function InitLoader(loader, bar, assets, ngUrl, loadNgCallBack, initCallBack){
 		if(assetTotal > 0)
 			loadAsset();	
 		else
-			initCallBack.call();
+			hideLoader();
 	}
 
 	function showPercent(n){
@@ -80,8 +80,7 @@ function InitLoader(loader, bar, assets, ngUrl, loadNgCallBack, initCallBack){
 
 	function hideLoader(){
 		setTimeout(function(){
-			loader.className = 'hide-opacity';	
-
+			loader.className = 'hide-opacity';
 			initCallBack.call();
 		}, 1000);	
 	} 
